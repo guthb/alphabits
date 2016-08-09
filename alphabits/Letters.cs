@@ -14,7 +14,7 @@ namespace Alphabits
         public List<char> enteredList = new List<char>();
 
 
-        //define a new Letter Constructor 
+        //define a new Letter Constructor for list of letters
         public Letters()
         {
             List<char> enteredList = new List<char>();
@@ -29,6 +29,7 @@ namespace Alphabits
 
             //handle all chars entered as lowercase
             enteredValue = char.ToLower(enteredValue);
+            //to check for more than one letter entered
             string charToSave = enteredValue.ToString();
 
             //check for non-letters and provide a messaage
@@ -37,13 +38,24 @@ namespace Alphabits
                 Console.WriteLine("'{0}' is not a letter, please choose again", enteredValue);
                 return;
             }
-
             
-            //check the list against what was entered
+            //check for more than one charachter entered
+            if (charToSave.Length != 1)
+            {
+                Console.Write("only enter one letter! \n");
+            }
 
+            //check if letter already added
+
+            if (enteredList.Contains(enteredValue))
+            {
+                Console.WriteLine(" {0}, has already been added.... try again", charToSave);
+                return;
+            }
 
             //update list of letters
 
+            enteredList.Add(enteredValue);
 
         }
 
