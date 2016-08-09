@@ -31,6 +31,12 @@ namespace Alphabits
 
                 char inputChar = userInput[0];
 
+                //check for more than one character entered
+                if (userInput.Length > 1)
+                {
+                    Console.Write("only enter one letter! \n");
+                }
+
                 letterList.addChar(inputChar);
 
                 letterCount = letterList.listLength();
