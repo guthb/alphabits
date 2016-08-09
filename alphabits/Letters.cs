@@ -39,11 +39,7 @@ namespace Alphabits
                 return;
             }
             
-            //check for more than one charachter entered
-            if (charToSave.Length != 1)
-            {
-                Console.Write("only enter one letter! \n");
-            }
+            
 
             //check if letter already added
 
