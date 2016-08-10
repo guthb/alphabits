@@ -56,13 +56,18 @@ namespace Alphabits
         }
 
         //build a contstructor function for listLength
-        //return the length of the priavte list 
+        //return the length of the private list 
         public int listLength()
         {
             return enteredList.Count();
         }
 
-
+        //bonus - build an easter egg into the program to return the list of entered letters
+        public string returnList()
+        {
+            string letterString = string.Join(",", enteredList.ToArray());
+            return letterString;
+        }
 
 
 

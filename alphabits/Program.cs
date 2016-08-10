@@ -24,22 +24,38 @@ namespace Alphabits
 
             while (letterCount != 26)
             {
+                int alphaTotal = 26;
                 //friendly message to urge user along
                 Console.WriteLine("you have entered {0} letters of the alphabet, what are you waiting for?\n", letterCount);
 
                 string userInput = Console.ReadLine();
 
                 char inputChar = userInput[0];
-
+                
                 //check for more than one character entered
                 if (userInput.Length > 1)
                 {
                     Console.Write("only enter one letter! \n");
                 }
 
+                //bonus
+                if (userInput == "@")
+                {
+
+                    String inputString = letterList.returnList();
+                    Console.Write("Current userList is {0} \n", inputString);
+                }
+
+
+
                 letterList.addChar(inputChar);
 
                 letterCount = letterList.listLength();
+                Console.WriteLine("you only have {0} to go", alphaTotal - letterCount);
+
+                
+
+
 
             }
             
